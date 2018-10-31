@@ -48,46 +48,14 @@ namespace FunCalculator
 
         }
 
-        private void clickednum_1(object sender, EventArgs e)
+        private void clickednum(object sender, EventArgs e)
         {
-            textBoxResultShow.Text = textBoxResultShow.Text + "1";
+            Button button = (Button)sender;
+            textBoxResultShow.Text = textBoxResultShow.Text + button.Text;
+            //  textBoxResultShow.Text = textBoxResultShow.Text + "1";
         }
-        private void clickednum_2(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "2";
-        }
-        private void clickednum_3(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "3";
-        }
-        private void clickednum_4(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "4";
-        }
-        private void clickednum_5(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "5";
-        }
-        private void clickednum_6(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "6";
-        }
-        private void clickednum_7(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "7";
-        }
-        private void clickednum_8(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "8";
-        }
-        private void clickednum_9(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "9";
-        }
-        private void clickednum_0(object sender, EventArgs e)
-        {
-            textBoxResultShow.Text = textBoxResultShow.Text + "0";
-        }
+
+    
 
         private void clickedMinus(object sender, EventArgs e)
         {
