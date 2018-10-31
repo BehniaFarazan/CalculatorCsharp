@@ -15,6 +15,9 @@ namespace FunCalculator
 {
     public partial class Form1 : Form
     {
+        Double resultValue = 0;
+        String operationPerformed = "";
+        bool isOperationPerformed = false;
         public Form1()
         {
             InitializeComponent();
@@ -23,70 +26,64 @@ namespace FunCalculator
         private void clickednum(object sender, EventArgs e)
         {
             if (textBoxResultShow.Text.Equals("0"))
-                textBoxResultShow.Clear(); 
+                textBoxResultShow.Clear();
+            isOperationPerformed = false;
             Button button = (Button)sender;
             textBoxResultShow.Text = textBoxResultShow.Text + button.Text;
             //  textBoxResultShow.Text = textBoxResultShow.Text + "1";
         }
-        private void clickedMinus(object sender, EventArgs e)
+        private void clickedOperator(object sender, EventArgs e)
         {
-
+            Button button = (Button)sender;
+            operationPerformed = button.Text;
+            resultValue = Double.Parse(textBoxResultShow.Text);
+            labelCurrentOperation.Text = resultValue + " " + operationPerformed;
+            isOperationPerformed = true;
+            textBoxResultShow.Clear();
         }
 
-        private void clickedX(object sender, EventArgs e)
-        {
 
-        }
-
-        private void clickedDiv(object sender, EventArgs e)
-        {
-
-        }
 
         private void clickedC(object sender, EventArgs e)
         {
-
+            textBoxResultShow.Clear();
+            labelCurrentOperation.Text = "";
+            resultValue = 0;
         }
 
         private void clickedEqual(object sender, EventArgs e)
         {
+            switch (operationPerformed)
+            {
+                case "+":
+                    textBoxResultShow.Text = (resultValue + Double.Parse(textBoxResultShow.Text)).ToString();
+                    labelCurrentOperation.Text = "";
 
+                    break;
+                case "-":
+                    textBoxResultShow.Text = (resultValue - Double.Parse(textBoxResultShow.Text)).ToString();
+                    labelCurrentOperation.Text = "";
+
+                    break;
+                case "*":
+                    textBoxResultShow.Text = (resultValue * Double.Parse(textBoxResultShow.Text)).ToString();
+                    labelCurrentOperation.Text = "";
+
+                    break;
+                case "/":
+                    textBoxResultShow.Text = (resultValue / Double.Parse(textBoxResultShow.Text)).ToString();
+                    labelCurrentOperation.Text = "";
+
+                    break;
+                default:
+                    labelCurrentOperation.Text = "";
+                    break;
+            }
         }
-        /*
-     
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clickedPlus(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-
-        }
- private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-       
-        */
-
-
-       
-       
     }
 }

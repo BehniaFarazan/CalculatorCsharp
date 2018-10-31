@@ -28,7 +28,6 @@ namespace FunCalculator
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@ namespace FunCalculator
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.textBoxResultShow = new System.Windows.Forms.TextBox();
+            this.labelCurrentOperation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -178,6 +178,7 @@ namespace FunCalculator
             this.button12.TabIndex = 11;
             this.button12.Text = "+";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.clickedOperator);
             // 
             // button13
             // 
@@ -188,7 +189,7 @@ namespace FunCalculator
             this.button13.TabIndex = 12;
             this.button13.Text = "-";
             this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.clickedMinus);
+            this.button13.Click += new System.EventHandler(this.clickedOperator);
             // 
             // button14
             // 
@@ -199,7 +200,7 @@ namespace FunCalculator
             this.button14.TabIndex = 13;
             this.button14.Text = "x";
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.clickedX);
+            this.button14.Click += new System.EventHandler(this.clickedOperator);
             // 
             // button15
             // 
@@ -210,7 +211,7 @@ namespace FunCalculator
             this.button15.TabIndex = 14;
             this.button15.Text = "/";
             this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.clickedDiv);
+            this.button15.Click += new System.EventHandler(this.clickedOperator);
             // 
             // button16
             // 
@@ -233,11 +234,22 @@ namespace FunCalculator
             this.textBoxResultShow.Text = "0";
             this.textBoxResultShow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // labelCurrentOperation
+            // 
+            this.labelCurrentOperation.AutoSize = true;
+            this.labelCurrentOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentOperation.Location = new System.Drawing.Point(23, 72);
+            this.labelCurrentOperation.Name = "labelCurrentOperation";
+            this.labelCurrentOperation.Size = new System.Drawing.Size(0, 25);
+            this.labelCurrentOperation.TabIndex = 17;
+            this.labelCurrentOperation.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 435);
+            this.Controls.Add(this.labelCurrentOperation);
             this.Controls.Add(this.textBoxResultShow);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
@@ -256,7 +268,6 @@ namespace FunCalculator
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -286,6 +297,7 @@ namespace FunCalculator
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.TextBox textBoxResultShow;
+        private System.Windows.Forms.Label labelCurrentOperation;
     }
 }
 
