@@ -25,25 +25,47 @@ namespace FunCalculator
 
         private void clickednum(object sender, EventArgs e)
         {
-            if (textBoxResultShow.Text.Equals("0")||(isOperationPerformed))
+            if (textBoxResultShow.Text.Equals("0") || (isOperationPerformed))
                 textBoxResultShow.Clear();
             isOperationPerformed = false;
             Button button = (Button)sender;
-            textBoxResultShow.Text = textBoxResultShow.Text + button.Text;
+            if (button.Text == ".")
+            {
+                if (!textBoxResultShow.Text.Contains("."))
+                {
+                    textBoxResultShow.Text = textBoxResultShow.Text + button.Text;
+                }
+            }
+            else
+                textBoxResultShow.Text = textBoxResultShow.Text + button.Text;
             //  textBoxResultShow.Text = textBoxResultShow.Text + "1";
         }
         private void clickedOperator(object sender, EventArgs e)
         {
-            try { 
-            
-            Button button = (Button)sender;
-            operationPerformed = button.Text;
-            resultValue = Double.Parse(textBoxResultShow.Text);
-            labelCurrentOperation.Text = resultValue + " " + operationPerformed;
-            isOperationPerformed = true;
-            textBoxResultShow.Clear();
+            try
+            {
+
+                Button button = (Button)sender;
+                if (resultValue!=0)
+                {
+
+                    button1.PerformClick();
+                    operationPerformed = button.Text;
+                    labelCurrentOperation.Text = resultValue + " " + operationPerformed;
+                    isOperationPerformed = true;
+
+
+                }
+                else { 
+                operationPerformed = button.Text;
+                resultValue = Double.Parse(textBoxResultShow.Text);
+                labelCurrentOperation.Text = resultValue + " " + operationPerformed;
+                isOperationPerformed = true;
+                textBoxResultShow.Clear();
+           }
             }
-            catch (Exception exp) {
+            catch (Exception exp)
+            {
             }
         }
 
@@ -84,6 +106,8 @@ namespace FunCalculator
                     labelCurrentOperation.Text = "";
                     break;
             }
+            resultValue = Double.Parse(textBoxResultShow.Text);
+            labelCurrentOperation.Text = "";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -91,6 +115,6 @@ namespace FunCalculator
 
         }
 
-      
+
     }
 }
