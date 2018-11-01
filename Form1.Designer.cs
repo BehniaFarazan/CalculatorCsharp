@@ -46,6 +46,7 @@ namespace FunCalculator
             this.button16 = new System.Windows.Forms.Button();
             this.textBoxResultShow = new System.Windows.Forms.TextBox();
             this.labelCurrentOperation = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -244,11 +245,23 @@ namespace FunCalculator
             this.labelCurrentOperation.TabIndex = 17;
             this.labelCurrentOperation.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(12, 385);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(50, 38);
+            this.button17.TabIndex = 18;
+            this.button17.Text = ".";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.clickednum);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 435);
+            this.Controls.Add(this.button17);
             this.Controls.Add(this.labelCurrentOperation);
             this.Controls.Add(this.textBoxResultShow);
             this.Controls.Add(this.button16);
@@ -298,6 +311,7 @@ namespace FunCalculator
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.TextBox textBoxResultShow;
         private System.Windows.Forms.Label labelCurrentOperation;
+        private System.Windows.Forms.Button button17;
     }
 }
 

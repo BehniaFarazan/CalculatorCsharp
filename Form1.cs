@@ -25,7 +25,7 @@ namespace FunCalculator
 
         private void clickednum(object sender, EventArgs e)
         {
-            if (textBoxResultShow.Text.Equals("0"))
+            if (textBoxResultShow.Text.Equals("0")||(isOperationPerformed))
                 textBoxResultShow.Clear();
             isOperationPerformed = false;
             Button button = (Button)sender;
@@ -34,12 +34,17 @@ namespace FunCalculator
         }
         private void clickedOperator(object sender, EventArgs e)
         {
+            try { 
+            
             Button button = (Button)sender;
             operationPerformed = button.Text;
             resultValue = Double.Parse(textBoxResultShow.Text);
             labelCurrentOperation.Text = resultValue + " " + operationPerformed;
             isOperationPerformed = true;
             textBoxResultShow.Clear();
+            }
+            catch (Exception exp) {
+            }
         }
 
 
@@ -65,7 +70,7 @@ namespace FunCalculator
                     labelCurrentOperation.Text = "";
 
                     break;
-                case "*":
+                case "x":
                     textBoxResultShow.Text = (resultValue * Double.Parse(textBoxResultShow.Text)).ToString();
                     labelCurrentOperation.Text = "";
 
@@ -85,5 +90,7 @@ namespace FunCalculator
         {
 
         }
+
+      
     }
 }
