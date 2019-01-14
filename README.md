@@ -3,7 +3,8 @@
 
 A calculator coded in C#, which is capable of performing and calculating the basic operations(+-*/).
 
-![](header.png)
+![image](https://user-images.githubusercontent.com/22538033/51136423-c1cc3200-183c-11e9-8531-8e6fcf7c599a.png)
+
 
 
 ## Status
