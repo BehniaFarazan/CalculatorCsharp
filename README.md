@@ -9,6 +9,7 @@ A calculator coded in C#, which is capable of performing and calculating the bas
 
 ## Status
 The application is very basic in it's current state and only just usable.
+
 Currently in development.
 
 ## Meta
